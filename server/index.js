@@ -5,6 +5,7 @@ var REST_PORT = 3000;
 
 app.use(bodyParser.json());
 app.use(express.static('../client'));
+app.use('/styles/styles.css', express.static('../styles.css'));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");

@@ -1,4 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+}
+
 body {
   font-family: Lucida Console, Monaco5, monospace;
+}
+
+.app-container {
+  overflow: hidden;
+  width: 100vw;
   height: 100vh;
+}
+
+.app {
+  display: grid;
+  grid-template: auto 400px 1fr auto / auto 400px auto;
+  grid-template-areas: 
+    ". title ."
+    ". list ."
+    ". buttons ."
+    ". . .";
+}
+
+.list-container {
+  outline: 1px red solid;
+  grid-area: list;
+}
+
+.title {
+  grid-area: title;
+}
+
+.user-buttons {
+  grid-area: buttons;
+}
+
+.user-buttons .btn-add {
+
 }
