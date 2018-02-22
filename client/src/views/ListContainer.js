@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import SearchBar from './SearchBar';
+class ListContainer extends Component {
+    
+    renderListItems(listItems) {
+        return listItems.map((listItem, index) => <li key={index}>{listItem}</li>);
+    }
 
-const ListContainer = ( ) => {
-    return (
-        <div className="list-container">
-            <SearchBar />
-            <ul>
-                <li>List Item 1</li>
-            </ul>
-        </div>
-    )
+    render() {
+        return (
+            <div className="list-container">
+                <ul>
+                    {
+                        this.renderListItems(this.props.listItems)
+                    }
+                </ul>
+            </div>
+        )
+    }
 }
 
-export default ListContainer;
+const mapStateToProps = (state) => {
+    return {
+        listItems: state.listItems
+    }
+}
+
+export default connect(mapStateToProps)(ListContainer);

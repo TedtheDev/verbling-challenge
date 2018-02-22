@@ -11,7 +11,9 @@ module.exports = {
     filename: 'index.js'
   },
   plugins: [
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.SourceMapDevToolPlugin(options)
+
   ],
   module: {
       loaders: [

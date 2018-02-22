@@ -19,9 +19,10 @@ body {
 
 .app {
   display: grid;
-  grid-template: auto 400px 1fr auto / auto 400px auto;
+  grid-template:  10vh auto 400px auto auto / auto 400px auto;
   grid-template-areas: 
     ". title ."
+    ". search ."
     ". list ."
     ". buttons ."
     ". . .";
@@ -30,6 +31,16 @@ body {
 .list-container {
   outline: 1px red solid;
   grid-area: list;
+  overflow-y: scroll;
+}
+
+.list-container ul {
+  list-style-type: none;
+}
+
+.list-container li {
+  border: 1px solid black;
+  min-height: 50px;
 }
 
 .title {
@@ -38,6 +49,10 @@ body {
 
 .user-buttons {
   grid-area: buttons;
+}
+
+.search-bar {
+  grid-area: search;
 }
 
 .user-buttons .btn-add {
