@@ -41,6 +41,12 @@ body {
 .list-container li {
   border: 1px solid black;
   min-height: 50px;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.list-container li.expand {
+  max-height: 100%;
 }
 
 .title {
@@ -57,4 +63,9 @@ body {
 
 .user-buttons .btn-add {
 
+}
+
+.list-item-modal-prompt {
+  position: relative;
+  z-index: 5;
 }

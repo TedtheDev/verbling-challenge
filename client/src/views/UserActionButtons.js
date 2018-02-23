@@ -13,10 +13,10 @@ class UserActionButtons extends Component {
     render() {
         return (
             <div className="user-buttons">
-                <button type="button">Open All</button>
-                <button type="button">Close All</button>
-                <button type="button">Toggle All</button>
-                <button className="btn-add" onClick={() => this.promptUserToAddListItem()} type="button">Add</button>
+                <button onClick={this.props.openAllListItems} type="button">Open All</button>
+                <button onClick={this.props.closeAllListItems} type="button">Close All</button>
+                <button onClick={this.props.toggleAllListItems} type="button">Toggle All</button>
+                <button className="btn-add" onClick={this.promptUserToAddListItem} type="button">Add</button>
             </div>
         )
     }

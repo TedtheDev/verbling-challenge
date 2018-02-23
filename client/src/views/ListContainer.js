@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import ListItem from './ListItem';
+
 class ListContainer extends Component {
     
     renderListItems(listItems) {
-        return listItems.map((listItem, index) => <li key={index}>{listItem}</li>);
+        return listItems.map((listItem, index) => <ListItem key={index} text={listItem} expandAll={this.props.expandAll} />);
     }
 
     render() {

@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 import App from './views/App';
+import ListItemPromp from './views/ListItemPrompt';
+
 import reducers from './reducers';
 import { FETCH_LIST_ITEMS } from './actions/types';
 
@@ -23,7 +25,10 @@ if(listItems) {
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <div>
+            <ListItemPromp />
+            <App />
+        </div>
     </Provider>
     , document.getElementById('app')
 );
