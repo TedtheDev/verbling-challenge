@@ -6,7 +6,14 @@ import ListItem from './ListItem';
 class ListContainer extends Component {
     
     renderListItems(listItems) {
-        return listItems.map((listItem, index) => <ListItem key={index} text={listItem} expandAll={this.props.expandAll} />);
+        return listItems.map((listItem, index) => {
+            return <ListItem 
+                        key={index} 
+                        text={listItem} 
+                        resetExpandAllState={this.props.resetExpandAllState} 
+                        expandAll={this.props.expandAll} 
+                    />
+            });
     }
 
     render() {

@@ -14,12 +14,23 @@ export default class ListItem extends Component {
     }
     
     componentWillReceiveProps(nextProps) {
-        this.setState({expand: nextProps.expandAll})
+        if(nextProps.expandAll !== null) {
+            this.setState({expand: nextProps.expandAll});
+            this.props.resetExpandAllState();
+        }
     }
 
     render() {
+        const renderListItem = (expandClass, text) => {
+            return <li className={expandClass} onClick={this.expand}>{text}</li>;
+        };
+
+        if(this.state.expand) {
+            return renderListItem('expand', this.props.text);
+        }
+
         return (
-            <li className={this.state.expand && 'expand' || ''} onClick={this.expand}>{this.props.text}</li>
+            renderListItem('', `${this.props.text.substring(0,30)}...`)
         )
     }
 }

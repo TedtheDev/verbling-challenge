@@ -8,11 +8,17 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { title: 'Verbling Challenge', expandAll: false};
+    this.state = { title: 'Verbling Challenge', expandAll: null, toggle: false};
 
     this.openAllListItems = this.openAllListItems.bind(this);
     this.closeAllListItems = this.closeAllListItems.bind(this);
     this.toggleAllListItems = this.toggleAllListItems.bind(this);
+
+    this.resetExpandAllState = this.resetExpandAllState.bind(this);
+  }
+
+  resetExpandAllState() {
+    this.setState({expandAll: null});
   }
 
   openAllListItems() {
@@ -24,8 +30,9 @@ export default class App extends React.Component {
   }
 
   toggleAllListItems() {
-    this.setState({ expandAll: !this.state.expandAll });
+    this.setState({ expandAll: !this.state.toggle, toggle: !this.state.toggle });
   }
+  
   render() {
     return (
       <div className="app">
@@ -35,6 +42,8 @@ export default class App extends React.Component {
         <SearchBar />
         <ListContainer 
           expandAll={this.state.expandAll}
+          closeAll={this.state.closeAll}
+          resetExpandAllState={this.resetExpandAllState}
         />
         <UserActionButtons  
           openAllListItems={this.openAllListItems}
