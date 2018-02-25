@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addListItem } from '../actions/index';
+import { Button } from 'semantic-ui-react';
 
 class UserActionButtons extends Component {
     
@@ -13,10 +14,10 @@ class UserActionButtons extends Component {
     render() {
         return (
             <div className="user-buttons">
-                <button onClick={this.props.openAllListItems} type="button">Open All</button>
-                <button onClick={this.props.closeAllListItems} type="button">Close All</button>
-                <button onClick={this.props.toggleAllListItems} type="button">Toggle All</button>
-                <button className="btn-add" onClick={this.promptUserToAddListItem} type="button">Add</button>
+                <Button secondary onClick={this.props.openAllListItems} type="button">Open All</Button>
+                <Button secondary onClick={this.props.closeAllListItems} type="button">Close All</Button>
+                <Button secondary onClick={this.props.toggleAllListItems} type="button">Toggle All</Button>
+                <Button primary className="btn-add" onClick={this.promptUserToAddListItem} type="button">Add</Button>
             </div>
         )
     }
