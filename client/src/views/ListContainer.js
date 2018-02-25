@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import ListItem from './ListItem';
 
@@ -12,7 +13,7 @@ class ListContainer extends Component {
                         text={listItem} 
                         resetExpandAllState={this.props.resetExpandAllState} 
                         expandAll={this.props.expandAll} 
-                    />
+                    />;
             });
     }
 
@@ -27,6 +28,11 @@ class ListContainer extends Component {
             </div>
         )
     }
+}
+
+ListContainer.propTypes = {
+    expandAll: PropTypes.object,
+    resetExpandAllState: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {

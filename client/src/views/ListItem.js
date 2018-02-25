@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class ListItem extends Component {
     constructor(props) {
@@ -33,4 +34,10 @@ export default class ListItem extends Component {
             renderListItem('', `${this.props.text.substring(0,30)}...`)
         )
     }
+}
+
+ListItem.propTypes = {
+    text: PropTypes.string.isRequired,
+    resetExpandAllState: PropTypes.func.isRequired,
+    expandAll: PropTypes.object
 }

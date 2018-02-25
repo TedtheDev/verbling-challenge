@@ -42,7 +42,6 @@ export default class App extends React.Component {
         <SearchBar />
         <ListContainer 
           expandAll={this.state.expandAll}
-          closeAll={this.state.closeAll}
           resetExpandAllState={this.resetExpandAllState}
         />
         <UserActionButtons  

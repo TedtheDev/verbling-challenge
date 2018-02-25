@@ -39,9 +39,21 @@ body {
 
 .list-container li {
   border: 1px solid black;
+  position: relative;
   min-height: 50px;
   max-height: 50px;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.list-container li::after {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: black;
+  right: 0;
+  top: 0;
 }
 
 .list-container li.expand {
