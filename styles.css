@@ -29,7 +29,6 @@ body {
 }
 
 .list-container {
-  outline: 1px red solid;
   grid-area: list;
   overflow-y: scroll;
 }

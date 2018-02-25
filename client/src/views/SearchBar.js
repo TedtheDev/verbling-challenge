@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { searchListItems } from '../actions/index';
+import { Input } from 'semantic-ui-react';
 
 class SearchBar extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class SearchBar extends Component {
     render() {
         return (
             <div className="search-bar">
-                <input type="text" placeholder="Search" value={this.state.searchTerm} onChange={this.onChangeSearchBarInput}/>
+                <Input type="text" placeholder="Search" value={this.state.searchTerm} onChange={this.onChangeSearchBarInput}/>
             </div>
         )
     }
