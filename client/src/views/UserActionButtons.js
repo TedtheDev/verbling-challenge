@@ -9,8 +9,9 @@ class UserActionButtons extends Component {
     
     promptUserToAddListItem() {
         const result = window.prompt('Enter the list item you want to add');
-        console.log(this.props)
-        this.props.addListItem(result);
+        if(result && result !== '') {
+            this.props.addListItem(result);
+        }
     }
 
     render() {
@@ -21,7 +22,7 @@ class UserActionButtons extends Component {
                     <Button secondary onClick={this.props.closeAllListItems} type="button">Close All</Button>
                     <Button secondary onClick={this.props.toggleAllListItems} type="button">Toggle All</Button>
                 </div>
-                <Button primary className="btn-add" onClick={this.promptUserToAddListItem} type="button">Add</Button>
+                <Button primary className="btn-add" onClick={this.promptUserToAddListItem.bind(this)} type="button">Add</Button>
             </div>
         )
     }
@@ -35,14 +36,6 @@ UserActionButtons.propTypes = {
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({ addListItem }, dispatch);
-    
-    /*
-    return {
-        addListItem: listItem => {
-            console.log(listItem)
-            dispatch(addListItem(listItem))
-        }
-    }*/
 }
 
 export default connect(null, mapDispatchToProps)(UserActionButtons);
