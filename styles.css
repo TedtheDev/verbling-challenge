@@ -90,13 +90,11 @@ body {
 }
 
 .list-container li.expand::before {
-  background: red;
   transform: rotate(-45deg);
   transition: transform .2s linear;
 }
 
 .list-container li.expand::after {
-  background: red;
   transform: rotate(45deg);
   transition: transform .2s linear;
 }
