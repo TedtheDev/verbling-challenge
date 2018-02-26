@@ -23,7 +23,7 @@ export default class ListItem extends Component {
 
     render() {
         const renderListItem = (expandClass, text) => {
-            return <li className={expandClass} onClick={this.expand}>{text}</li>;
+            return <li className={expandClass} onClick={this.expand}><div>{text}</div></li>;
         };
 
         if(this.state.expand) {
