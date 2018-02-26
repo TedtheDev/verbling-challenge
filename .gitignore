@@ -1,4 +1,4 @@
 node_modules/
 ignore/
 npm-debug.log
-/client/dist
+client/dist

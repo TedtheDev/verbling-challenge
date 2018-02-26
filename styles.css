@@ -20,6 +20,7 @@ body {
 .app {
   display: grid;
   grid-template:  10vh auto 400px auto auto / auto 400px auto;
+  grid-row-gap: 1vh;
   grid-template-areas: 
     ". title ."
     ". search ."
@@ -28,13 +29,22 @@ body {
     ". . .";
 }
 
+.title {
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .list-container {
   grid-area: list;
   overflow-y: scroll;
+  border: 1px solid black;
 }
 
 .list-container ul {
   list-style-type: none;
+  padding: 0;
 }
 
 .list-container li {
@@ -57,11 +67,12 @@ body {
 }
 
 .list-container li.expand {
-  max-height: 100%;
+  max-height: 100vh;
 }
 
 .title {
   grid-area: title;
+
 }
 
 .user-buttons {
@@ -72,8 +83,9 @@ body {
   grid-area: search;
 }
 
-.user-buttons .btn-add {
-
+.user-buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 .list-item-modal-prompt {
