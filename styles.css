@@ -56,18 +56,46 @@ body {
   cursor: pointer;
 }
 
+.list-container li::before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 5px;
+  background: black;
+  right: 12px;
+  top: 15px;
+  transform: rotate(45deg);
+  border-radius: 5px;
+  transition: transform .5s linear;
+}
+
 .list-container li::after {
   position: absolute;
   content: '';
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 5px;
   background: black;
   right: 0;
-  top: 0;
+  top: 15px;
+  transform: rotate(-45deg);
+  border-radius: 5px;
+  transition: transform .5s linear;
 }
 
 .list-container li.expand {
   max-height: 100vh;
+}
+
+.list-container li.expand::before {
+  background: red;
+  transform: rotate(315deg);
+  transition: transform .5s linear;
+}
+
+.list-container li.expand::after {
+  background: red;
+  transform: rotate(-315deg);
+  transition: transform .5s linear;
 }
 
 .title {
