@@ -32,8 +32,8 @@ class SearchBar extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return bindActionCreators({ searchListItems}, dispatch);
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({ searchListItems }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(SearchBar);

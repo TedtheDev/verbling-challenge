@@ -4,6 +4,9 @@ import {
     SEARCH_LIST_ITEMS
 } from '../actions/types';
 
+// List Item Reducer
+// Holds all list item for state
+// 3 Types: AddListItem, FetchListItems, SearchListItems
 export default function(state = [], action) {
     switch(action.type) {
         case ADD_LIST_ITEM:
@@ -20,10 +23,16 @@ export default function(state = [], action) {
     }
 }
 
+/**
+ * Searches all List Items within List Item State
+ * with desired Search Term using RegEx
+ * @param {string} searchTerm 
+ * @param {array} state 
+ */
 const searchListItemsWithSearchTerm = (searchTerm, state) => {
     if(searchTerm != '') {
         const listItems = JSON.parse(localStorage.getItem('listItems'));
-        const pattern = new RegExp(`${searchTerm}`)
+        const pattern = new RegExp(`${searchTerm}`, 'i')
         return listItems.filter(listItem => listItem.match(pattern))
     }
     return JSON.parse(localStorage.getItem('listItems'));

@@ -10,6 +10,7 @@ export default class ListItem extends Component {
         this.expand = this.expand.bind(this);
     }
 
+    // Changes expand state which adds .expand class to itself
     expand() {
         this.setState({expand: !this.state.expand});
     }
